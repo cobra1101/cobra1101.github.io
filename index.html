@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocab de Cody</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2em;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 1.2em;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vocab de Cody</h1>
+    <p>Lista de archivos disponibles:</p>
+    <ul id="file-list"></ul>
+
+    <script>
+        fetch(window.location.href)
+            .then(response => response.text())
+            .then(html => {
+                let parser = new DOMParser();
+                let doc = parser.parseFromString(html, "text/html");
+                let links = doc.querySelectorAll("a[href$='.html']:not([href='index.html'])");
+
+                let fileList = document.getElementById("file-list");
+                links.forEach(link => {
+                    let listItem = document.createElement("li");
+                    let anchor = document.createElement("a");
+                    anchor.href = link.href;
+                    anchor.textContent = link.textContent || link.href.split('/').pop();
+                    listItem.appendChild(anchor);
+                    fileList.appendChild(listItem);
+                });
+            })
+            .catch(error => console.error("Error loading file list:", error));
+    </script>
+</body>
+</html>
