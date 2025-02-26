@@ -23,8 +23,8 @@ jobs:
           </head>
           <body>
               <h1>Vocab de Cody</h1>
-              <p>Click a link below to open an HTML file:</p>
-              <ul>' > index.html
+              <p style="text-align: center;">Click a link below to open an HTML file:</p>
+              <ol style="text-align: center;">' > index.html
 
           for file in *.html; do
             if [[ "$file" != "index.html" ]]; then
@@ -32,7 +32,7 @@ jobs:
             fi
           done
 
-          echo '              </ul>
+          echo '              </ol>
           </body>
           </html>' >> index.html
 
