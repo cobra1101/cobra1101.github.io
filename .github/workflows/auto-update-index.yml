@@ -21,9 +21,15 @@ jobs:
               <meta name="viewport" content="width=device-width, initial-scale=1.0">
               <title>Vocab de Cody</title>
                  <style>
+                         body {
+                          display: flex;
+                          justify-content: center;  
+                           align-items: center;     
+                          height: 100vh;        
+                            margin: 0;
+                        }
                  ol {
-            list-style-position: inside;  
-            text-align: center;         
+                         text-align: left;      
                      }
                 </style>
           </head>
