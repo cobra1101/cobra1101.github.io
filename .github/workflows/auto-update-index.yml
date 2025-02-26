@@ -30,7 +30,7 @@ jobs:
           <body>
            
           
-              <ol style="text-align: center;">' > index.html
+              <ol>' > index.html
 
           for file in *.html; do
             if [[ "$file" != "index.html" ]]; then
