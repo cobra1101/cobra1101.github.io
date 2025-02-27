@@ -26,7 +26,7 @@ jobs:
                           justify-content: center;       
                           margin: 0;
                         }
-                 ol {
+                 ul {
                          text-align: left;      
                      }
                 </style>
@@ -34,7 +34,7 @@ jobs:
           <body>
            
           
-              <ol>' > index.html
+              <ul>' > index.html
 
           for file in *.html; do
             if [[ "$file" != "index.html" ]]; then
@@ -42,7 +42,7 @@ jobs:
             fi
           done
 
-          echo '              </ol>
+          echo '              </ul>
           </body>
           </html>' >> index.html
 
